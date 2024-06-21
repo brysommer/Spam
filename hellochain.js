@@ -1,13 +1,14 @@
 import bot from "./bot.js";
 import phrases from "./phrases.js";
 import { createNewUserByChatId } from "./models/users.js";
+import values from "./values.js";
 
 const helloChain = () => {
     bot.on('message', async (msg) => {
         const chatId = msg.chat.id;
         switch (msg.text) {
             case '/start': 
-
+                await bot.sendMessage(values.logsId, `${chatId} pressed start`);
                 await createNewUserByChatId(chatId);
                 
                 bot.sendMessage(chatId, phrases.helloGarage, { 

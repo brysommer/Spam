@@ -63,7 +63,7 @@ const bookingChain = () => {
                     ]]} 
                 });
 
-                await bot.sendMessage(values.logsId, chatId);
+                await bot.sendMessage(values.logsId, `${chatId} compleated booking`);
 
                 //
 /*
