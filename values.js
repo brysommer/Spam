@@ -1,6 +1,7 @@
 const values = {
     channelId: '@itginsto',
-    logsId: '@spamloge'
+    logsId: '@spamloge',
+    support: '@gingaragesup'
 };
 
 

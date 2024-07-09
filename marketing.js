@@ -1,6 +1,7 @@
 import bot from "./bot.js";
 import phrases from "./phrases.js";
 import { updateUserByChatId, findUserByChatId } from "./models/users.js";
+import support from "./support.js";
 
 const marketingChain = () => {    
 
@@ -9,9 +10,8 @@ const marketingChain = () => {
         const chatId = query.message.chat.id;
         switch (action) {
             case 'contact': 
-                await bot.sendMessage(chatId, `Щоб замовити індивідуальну розробку телефонуйте`);
-                await new Promise(resolve => setTimeout(resolve, 2000));
-                await bot.sendContact(chatId, '+380674600500', 'Євген');
+                bot.sendMessage(chatId, 'Будь ласка, поставте своє запитання, ми обовязково вам допоможемо🦄');
+                support();
 
         }
     })
