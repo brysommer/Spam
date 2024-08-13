@@ -66,9 +66,16 @@ const findUserByChatId = async (chat_id) => {
     return res;
 };
 
+const findAllUsersIds = async () => {
+    const res = await User.findAll({ attributes: ['chat_id'] });
+    if (res.length > 0) return res.map(user => user.chat_id);
+    return [];
+};
+
 export {
     User,
     updateUserByChatId,
     findUserByChatId,
-    createNewUserByChatId
+    createNewUserByChatId,
+    findAllUsersIds
 };   
